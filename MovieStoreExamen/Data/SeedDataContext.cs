@@ -24,8 +24,8 @@ namespace MovieStoreExamen.Data
                 if (!context.Genre.Any() || !(context.Movie.Any()))
                 {
                     context.Genre.AddRange(
-                        new Genre { Name = "Actie" },
-                        new Genre { Name = "Sci-Fi" }
+                        new Genre { Name = "Actie" }, //id 1
+                        new Genre { Name = "Sci-Fi" } // id 2
                         );
                     context.SaveChanges();
 

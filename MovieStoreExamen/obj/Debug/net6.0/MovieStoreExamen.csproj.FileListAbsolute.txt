@@ -260,3 +260,11 @@ C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\runtimes\win\lib\n
 C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\jaimy\source\repos\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.csproj.CopyComplete
 C:\Users\jaimy\source\repos\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.csproj.AssemblyReference.cache
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\jaimy\source\repos\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.MvcApplicationPartsAssemblyInfo.cs
