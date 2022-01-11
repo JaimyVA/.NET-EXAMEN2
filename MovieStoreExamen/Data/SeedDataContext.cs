@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using MovieStoreExamen.Areas.Identity.Data;
 using MovieStoreExamen.Models;
 
 namespace MovieStoreExamen.Data
@@ -11,6 +13,7 @@ namespace MovieStoreExamen.Data
                                                                                     <DbContextOptions<MovieStoreExamenContext>>()))
             {
                 context.Database.EnsureCreated();
+
 
                 if (!context.Customer.Any())
                 {

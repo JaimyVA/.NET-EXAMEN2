@@ -538,3 +538,4 @@ C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\M
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\ref\MovieStoreExamen.dll
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.pdb
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.genruntimeconfig.cache
+C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
