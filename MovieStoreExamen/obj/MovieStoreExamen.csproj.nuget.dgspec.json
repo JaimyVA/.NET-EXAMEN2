@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\MovieStoreExamen.csproj": {}
+    "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\MovieStoreExamen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\MovieStoreExamen.csproj": {
+    "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\MovieStoreExamen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\MovieStoreExamen.csproj",
+        "projectUniqueName": "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\MovieStoreExamen.csproj",
         "projectName": "MovieStoreExamen",
-        "projectPath": "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\MovieStoreExamen.csproj",
+        "projectPath": "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\MovieStoreExamen.csproj",
         "packagesPath": "C:\\Users\\jaimy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\obj\\",
+        "outputPath": "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jaimy\\AppData\\Roaming\\NuGet\\NuGet.Config",

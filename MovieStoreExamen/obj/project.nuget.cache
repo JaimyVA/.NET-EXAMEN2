@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4HABZyZBi7fd4b4qsTmUfe7QII+2WZ/pGK9FJ0qYcGlEQP7Gk6sPybLpBywWNxPZuHZJ1B2MFsrzl7lr/D1aOw==",
+  "dgSpecHash": "OTEva/59zsYp/8nk1cqvY8U/hGb+0xabQMUBoyra7UEMaW1mBz4hunA35lxcMvntvBC/K/Ux1bwUTPGkGz+JPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jaimy\\source\\repos\\MovieStoreExamen\\MovieStoreExamen.csproj",
+  "projectFilePath": "C:\\Users\\jaimy\\Documents\\GitHub\\.NET-EXAMEN2\\MovieStoreExamen\\MovieStoreExamen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jaimy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jaimy\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
