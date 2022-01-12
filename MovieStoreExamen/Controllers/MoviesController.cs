@@ -27,6 +27,24 @@ namespace MovieStoreExamen.Controllers
             return View(await movieStoreExamenContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Gent()
+        {
+            var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
+            return View(await movieStoreExamenContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> Brussel()
+        {
+            var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
+            return View(await movieStoreExamenContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> Antwerpen()
+        {
+            var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
+            return View(await movieStoreExamenContext.ToListAsync());
+        }
+
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
