@@ -6,14 +6,13 @@ using MovieStoreExamen.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("MovieStoreExamenContext");
-
-builder.Services.AddDbContext<MovieStoreExamenContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieStoreExamenContext")));
-
-builder.Services.AddDefaultIdentity<MovieStoreExamenUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IdentityContext>();builder.Services.AddDbContext<IdentityContext>(options =>
+var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");
+builder.Services.AddDbContext<global::MovieStoreExamen.Data.ApplicationDbContext>((global::Microsoft.EntityFrameworkCore.DbContextOptionsBuilder options) =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>((IdentityOptions options) => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 // Add services to the container.
@@ -64,6 +63,7 @@ app.MapRazorPages();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    SeedDataContext.Initialize(services);
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    SeedDataContext.Initialize(services, userManager);
 }
 app.Run();

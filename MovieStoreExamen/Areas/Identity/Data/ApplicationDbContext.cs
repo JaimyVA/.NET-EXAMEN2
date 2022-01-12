@@ -3,14 +3,21 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieStoreExamen.Areas.Identity.Data;
 
-namespace MovieStoreExamen.Areas.Identity.Data;
+namespace MovieStoreExamen.Data;
 
-public class IdentityContext : IdentityDbContext<MovieStoreExamenUser>
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
-    public IdentityContext(DbContextOptions<IdentityContext> options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
+    public DbSet<MovieStoreExamen.Models.Customer> Customer { get; set; }
+
+    public DbSet<MovieStoreExamen.Models.Movie> Movie { get; set; }
+
+    public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
+
+    public DbSet<MovieStoreExamen.Models.Genre> Genre { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

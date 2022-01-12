@@ -13,9 +13,9 @@ namespace MovieStoreExamen.Controllers
 {
     public class GenresController : Controller
     {
-        private readonly MovieStoreExamenContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public GenresController(MovieStoreExamenContext context)
+        public GenresController(ApplicationDbContext context)
         {
             _context = context;
         }

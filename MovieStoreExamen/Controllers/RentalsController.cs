@@ -13,9 +13,9 @@ namespace MovieStoreExamen.Controllers
 {
     public class RentalsController : Controller
     {
-        private readonly MovieStoreExamenContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public RentalsController(MovieStoreExamenContext context)
+        public RentalsController(ApplicationDbContext context)
         {
             _context = context;
         }

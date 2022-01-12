@@ -1,8 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using MovieStoreExamen.Areas.Identity.Data
 
-@inject SignInManager<MovieStoreExamenUser> SignInManager
-@inject UserManager<MovieStoreExamenUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
