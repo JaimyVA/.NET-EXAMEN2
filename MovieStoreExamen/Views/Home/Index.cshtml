@@ -5,7 +5,27 @@
 <div class="text-center">
     <h1 class="display-4">Welkom bij de MovieStore</h1>
     <p>Kies de Locatie van de MovieStore</p>
-    <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Antwerpen">ANTWERPEN</a></h1>
+@*    <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Antwerpen">ANTWERPEN</a></h1>
+    <img src=~/img/MovieStore1.png/>
     <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Brussel">BRUSSEL</a></h1>
+    <img src=~/img/MovieStore2.png/>
     <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Gent">GENT</a></h1>
+    <img src=~/img/MovieStore3.png/>*@
+
+    <div class="container">
+  <div class="row">
+    <div class="col">
+        <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Antwerpen">ANTWERPEN</a></h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Antwerpen"><img class="StoreImage" src=~/img/MovieStore1.png/></a>
+    </div>
+    <div class="col">
+        <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Brussel">BRUSSEL</a></h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Brussel"><img class="StoreImage" src=~/img/MovieStore2.png/></a>
+    </div>
+    <div class="col">
+        <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Gent">GENT</a></h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Gent"><img class="StoreImage" src=~/img/MovieStore3.png/></a>
+    </div>
+  </div>
+</div>
 </div>
