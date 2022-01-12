@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieStoreExamen.Models
 {
+
+    [Authorize(Roles = "Administrator,Worker")]
     public class Movie
     {
         public int MovieId { get; set; }

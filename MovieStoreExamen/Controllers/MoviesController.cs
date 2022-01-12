@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,31 +15,34 @@ namespace MovieStoreExamen.Controllers
     public class MoviesController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // GET: Movies
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> Index()
         {
             var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
             return View(await movieStoreExamenContext.ToListAsync());
         }
 
+        [Authorize]
         public async Task<IActionResult> Gent()
         {
             var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
             return View(await movieStoreExamenContext.ToListAsync());
         }
 
+        [Authorize]
         public async Task<IActionResult> Brussel()
         {
             var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
             return View(await movieStoreExamenContext.ToListAsync());
         }
 
+        [Authorize]
         public async Task<IActionResult> Antwerpen()
         {
             var movieStoreExamenContext = _context.Movie.Include(m => m.Genre);
@@ -65,6 +69,7 @@ namespace MovieStoreExamen.Controllers
         }
 
         // GET: Movies/Create
+        [Authorize(Roles = "Administrator,Worker")]
         public IActionResult Create()
         {
             ViewData["GenreId"] = new SelectList(_context.Genre, "Id", "Name");
@@ -89,6 +94,7 @@ namespace MovieStoreExamen.Controllers
         }
 
         // GET: Movies/Edit/5
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -110,6 +116,7 @@ namespace MovieStoreExamen.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> Edit(int id, [Bind("MovieId,MovieTitle,Rating,Rental_Duration,Amount_Gent,Amount_Brussel,Amount_Antwerpen,Amount_Returned,GenreId")] Movie movie)
         {
             if (id != movie.MovieId)
@@ -142,6 +149,7 @@ namespace MovieStoreExamen.Controllers
         }
 
         // GET: Movies/Delete/5
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -163,6 +171,7 @@ namespace MovieStoreExamen.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movie.FindAsync(id);
