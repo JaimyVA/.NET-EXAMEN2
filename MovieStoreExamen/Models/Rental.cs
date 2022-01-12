@@ -12,7 +12,13 @@ namespace MovieStoreExamen.Models
 
         [DataType(DataType.Date)]
         public DateTime? RentalExpiry { get; set; }
-        public Customer Customer { get; set; }
-        public Movie Movie { get; set; }
+
+        [ForeignKey("Customer")]
+        public int CustomerId { get; set; }
+        public Customer? Customer { get; set; }
+
+        [ForeignKey("Movie")]
+        public int MovieId { get; set; }
+        public Movie? Movie { get; set; }
     }
 }

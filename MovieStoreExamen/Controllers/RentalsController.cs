@@ -23,7 +23,8 @@ namespace MovieStoreExamen.Controllers
         // GET: Rentals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rental.ToListAsync());
+            var applicationDbContext = _context.Rental.Include(r => r.Customer).Include(r => r.Movie);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Rentals/Details/5
@@ -35,6 +36,8 @@ namespace MovieStoreExamen.Controllers
             }
 
             var rental = await _context.Rental
+                .Include(r => r.Customer)
+                .Include(r => r.Movie)
                 .FirstOrDefaultAsync(m => m.RentalId == id);
             if (rental == null)
             {
@@ -47,6 +50,8 @@ namespace MovieStoreExamen.Controllers
         // GET: Rentals/Create
         public IActionResult Create()
         {
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Lastname");
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "MovieTitle");
             return View();
         }
 
@@ -55,7 +60,7 @@ namespace MovieStoreExamen.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RentalId,RentalDate,RentalExpiry")] Rental rental)
+        public async Task<IActionResult> Create([Bind("RentalId,RentalDate,RentalExpiry,CustomerId,MovieId")] Rental rental)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +68,8 @@ namespace MovieStoreExamen.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Lastname", rental.CustomerId);
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "MovieTitle", rental.MovieId);
             return View(rental);
         }
 
@@ -79,6 +86,8 @@ namespace MovieStoreExamen.Controllers
             {
                 return NotFound();
             }
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Lastname", rental.CustomerId);
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "MovieTitle", rental.MovieId);
             return View(rental);
         }
 
@@ -87,7 +96,7 @@ namespace MovieStoreExamen.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RentalId,RentalDate,RentalExpiry")] Rental rental)
+        public async Task<IActionResult> Edit(int id, [Bind("RentalId,RentalDate,RentalExpiry,CustomerId,MovieId")] Rental rental)
         {
             if (id != rental.RentalId)
             {
@@ -114,6 +123,8 @@ namespace MovieStoreExamen.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Lastname", rental.CustomerId);
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "MovieTitle", rental.MovieId);
             return View(rental);
         }
 
@@ -126,6 +137,8 @@ namespace MovieStoreExamen.Controllers
             }
 
             var rental = await _context.Rental
+                .Include(r => r.Customer)
+                .Include(r => r.Movie)
                 .FirstOrDefaultAsync(m => m.RentalId == id);
             if (rental == null)
             {

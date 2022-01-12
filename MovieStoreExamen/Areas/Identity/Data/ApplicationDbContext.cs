@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieStoreExamen.Areas.Identity.Data;
+using MovieStoreExamen.Models;
 
 namespace MovieStoreExamen.Data;
 
@@ -15,7 +16,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<MovieStoreExamen.Models.Movie> Movie { get; set; }
 
-    public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
+    //public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
 
     public DbSet<MovieStoreExamen.Models.Genre> Genre { get; set; }
 
@@ -28,4 +29,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     }
 
     public DbSet<MovieStoreExamen.Areas.Identity.Data.ApplicationUserViewModel> ApplicationUserViewModel { get; set; }
+
+    public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
 }
