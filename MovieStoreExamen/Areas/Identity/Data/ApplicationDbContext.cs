@@ -16,7 +16,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<MovieStoreExamen.Models.Movie> Movie { get; set; }
 
-    //public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
+    public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
 
     public DbSet<MovieStoreExamen.Models.Genre> Genre { get; set; }
 
@@ -29,6 +29,4 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     }
 
     public DbSet<MovieStoreExamen.Areas.Identity.Data.ApplicationUserViewModel> ApplicationUserViewModel { get; set; }
-
-    public DbSet<MovieStoreExamen.Models.Rental> Rental { get; set; }
 }
