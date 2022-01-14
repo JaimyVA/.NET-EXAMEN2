@@ -50,6 +50,7 @@ namespace MovieStoreExamen.Controllers
         }
 
         // GET: Movies/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -81,6 +82,7 @@ namespace MovieStoreExamen.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Worker")]
         public async Task<IActionResult> Create([Bind("MovieId,MovieTitle,Rating,Rental_Duration,Amount_Gent,Amount_Brussel,Amount_Antwerpen,Amount_Returned,GenreId")] Movie movie)
         {
             if (ModelState.IsValid)
