@@ -1,9 +1,11 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@{
     ViewData["Title"] = "Home Page";
 }
+@inject IViewLocalizer L
 
 <div class="text-center">
-    <h1 class="display-4">Welkom bij de MovieStore</h1>
+    <h1 class="display-4">@L["Welkom bij de MovieStore"]</h1>
     <p>Kies de Locatie van de MovieStore</p>
 @*    <h1><a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Antwerpen">ANTWERPEN</a></h1>
     <img src=~/img/MovieStore1.png/>

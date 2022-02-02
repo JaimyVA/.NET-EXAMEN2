@@ -3,8 +3,12 @@ using Microsoft.Extensions.DependencyInjection;
 using MovieStoreExamen.Data;
 using Microsoft.AspNetCore.Identity;
 using MovieStoreExamen.Areas.Identity.Data;
+using MovieStoreExamen.Models;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+string[] supportedCultures = null;
+supportedCultures = Language.Initialize();
 
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection");
 builder.Services.AddDbContext<global::MovieStoreExamen.Data.ApplicationDbContext>((global::Microsoft.EntityFrameworkCore.DbContextOptionsBuilder options) =>
@@ -14,9 +18,24 @@ builder.Services.AddDefaultIdentity<ApplicationUser>((IdentityOptions options) =
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+supportedCultures = Language.Initialize();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContextConnection")));
+
+builder.Services.AddLocalization(option => option.ResourcesPath = "Translations");
+builder.Services.AddMvc()
+        .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
+        .AddDataAnnotationsLocalization();
+
+builder.Services.Configure<RequestLocalizationOptions>(option =>
+{
+    option.SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+});
+builder.Services.AddControllersWithViews().AddViewLocalization();
 
 // Wijzig de standaard settings van Identity als nodig
 builder.Services.Configure<IdentityOptions>(options =>
