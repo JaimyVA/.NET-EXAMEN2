@@ -1,18 +1,19 @@
-﻿@model IEnumerable<MovieStoreExamen.Models.Customer>
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model IEnumerable<MovieStoreExamen.Models.Customer>
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Klanten";
+    ViewData["Title"] = @L["Klanten"];
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@L["Nieuwe klant"]</a>
 </p>
 
 <p>
     <form asp-action="Index" asp-controller="Customers" method="get">
-      Selecteer:
+      @L["Selecteer"]:
     <input type="text" name="searchField" />
     <input type="submit" value="Filter" />
     </form>
@@ -64,9 +65,9 @@
                 @Html.DisplayFor(modelItem => item.strikes)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Wijzigen</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Verwijderen</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">@L["Wijzigen"]</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@L["Details"]</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@L["Verwijderen"]</a>
             </td>
         </tr>
 }

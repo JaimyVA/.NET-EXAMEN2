@@ -35,7 +35,7 @@ builder.Services.Configure<RequestLocalizationOptions>(option =>
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 });
-builder.Services.AddControllersWithViews().AddViewLocalization();
+builder.Services.AddControllersWithViews();
 
 // Wijzig de standaard settings van Identity als nodig
 builder.Services.Configure<IdentityOptions>(options =>
@@ -71,6 +71,12 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
 
 app.MapControllerRoute(
     name: "default",

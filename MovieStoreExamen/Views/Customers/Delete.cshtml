@@ -1,15 +1,14 @@
-﻿@model MovieStoreExamen.Models.Customer
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model MovieStoreExamen.Models.Customer
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Verwijder";
+    ViewData["Title"] = @L["Verwijder"];
 }
 
-<h1>Delete</h1>
+<h1>@L["Verwijder"]</h1>
 
-<h3>Ben je zeker dat je deze klant wil verwijderen?</h3>
+<h3>@L["Ben je zeker dat je deze klant wil verwijderen?"]</h3>
 <div>
-    <h4>Customer</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -45,7 +44,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Verwijder" class="btn btn-danger" /> |
-        <a asp-action="Index">Terug naar overzicht</a>
+        <input type="submit" value=@L["Verwijder"] class="btn btn-danger" /> |
+        <a asp-action="Index">@L["Terug naar overzicht"]</a>
     </form>
 </div>

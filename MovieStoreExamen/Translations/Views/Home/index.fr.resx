@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ANTWERPEN" xml:space="preserve">
+    <value>ANVERS</value>
+  </data>
+  <data name="BRUSSEL" xml:space="preserve">
+    <value>BRUXELLES</value>
+  </data>
+  <data name="GENT" xml:space="preserve">
+    <value>GAND</value>
+  </data>
+  <data name="Kies de Locatie van de MovieStore" xml:space="preserve">
+    <value>Choisissez l'emplacement du MovieStore</value>
+  </data>
   <data name="Welkom bij de MovieStore" xml:space="preserve">
     <value>Bienvenue sur le MovieStore</value>
   </data>
