@@ -1,15 +1,16 @@
-﻿@model IEnumerable<MovieStoreExamen.Models.Movie>
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model IEnumerable<MovieStoreExamen.Models.Movie>
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Gent";
+    ViewData["Title"] = @L["MovieStore Gent"];
 }
 
-<h1>Gent</h1>
+<h1>@L["Gent"]</h1>
 
 @if(User.IsInRole("Administrator") || User.IsInRole("Worker"))
 {
     <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@L["Voeg toe"]</a>
     </p>
 }
 <table class="table">
@@ -60,11 +61,11 @@
             <td>
                     @if(User.IsInRole("Administrator") || User.IsInRole("Worker"))
                     {
-                <a asp-action="Details" asp-route-id="@item.MovieId">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a>
-                <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.MovieId">@L["Details"]</a>
+                <a asp-action="Edit" asp-route-id="@item.MovieId">@L["Bewerk"]</a>
+                <a asp-action="Delete" asp-route-id="@item.MovieId">@L["Verwijder"]</a>
                     }
-               <a asp-area="" asp-controller="Rentals" asp-action="Create">Film Lenen</a>
+               <a asp-area="" asp-controller="Rentals" asp-action="Create">@L["Film Lenen"]</a>
             </td>
         </tr>
 }

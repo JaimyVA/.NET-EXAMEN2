@@ -1,13 +1,14 @@
-﻿@model IEnumerable<MovieStoreExamen.Models.Movie>
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model IEnumerable<MovieStoreExamen.Models.Movie>
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = @L["Alle Films"];
 }
 
-<h1>Index</h1>
+<h1>@L["Films"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@L["Voeg toe"]</a>
 </p>
 <table class="table">
     <thead>
@@ -67,9 +68,9 @@
                 @Html.DisplayFor(modelItem => item.Genre.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.MovieId">@L["Bewerk"]</a> |
+                <a asp-action="Details" asp-route-id="@item.MovieId">@L["Details"]</a> |
+                <a asp-action="Delete" asp-route-id="@item.MovieId">@L["Verwijder"]</a>
             </td>
         </tr>
 }

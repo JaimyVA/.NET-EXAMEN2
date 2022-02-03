@@ -1,12 +1,13 @@
-﻿@model MovieStoreExamen.Models.Movie
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model MovieStoreExamen.Models.Movie
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = @L["Voeg Toe"];
 }
 
-<h1>Create</h1>
+<h1>@L["Voeg Toe"]</h1>
 
-<h4>Movie</h4>
+<h4>@L["Film"]</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -52,14 +53,14 @@
                 <select asp-for="GenreId" class ="form-control" asp-items="ViewBag.GenreId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value=@L["Toevoegen"] class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@L["Terug naar Overzicht"]</a>
 </div>
 
 @section Scripts {
