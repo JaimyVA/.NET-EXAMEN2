@@ -46,7 +46,7 @@ namespace MovieStoreExamen.Data
                         EmailConfirmed = true
                     };
 
-                    userManager.CreateAsync(Administrator, "MovieStore123");
+                    userManager.CreateAsync(Administrator, "Student+1");
                     userManager.CreateAsync(Customer1, "MovieStore123");
                     userManager.CreateAsync(Worker1, "MovieStore123");
 

@@ -20,6 +20,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<MovieStoreExamen.Models.Genre> Genre { get; set; }
 
+    public DbSet<MovieStoreExamen.Models.Genre> Language { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
