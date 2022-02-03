@@ -1,13 +1,14 @@
-﻿@model MovieStoreExamen.Models.Rental
-
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model MovieStoreExamen.Models.Rental
+@inject IViewLocalizer L
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = @L["Details"];
 }
 
-<h1>Details</h1>
+<h1>@L["Details"]</h1>
 
 <div>
-    <h4>Rental</h4>
+    <h4>@L["Lening"]</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -37,6 +38,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.RentalId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.RentalId">@L["Bewerk"]</a> |
+    <a asp-action="Index">@L["Terug naar Overzicht"]</a>
 </div>
