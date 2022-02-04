@@ -19,6 +19,9 @@ namespace MovieStoreExamen.Data
 
                 if (!context.Users.Any())
                 {
+                    ApplicationUser dummy = new ApplicationUser { Id = "-", FirstName = "-", LastName = "-", UserName = "-", Email = "-", PhoneNumber = "-"};
+                    context.Users.Add(dummy);
+                    context.SaveChanges();
                     Administrator = new ApplicationUser
                     {
                         UserName = "Admin",

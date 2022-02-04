@@ -13,13 +13,12 @@ using MovieStoreExamen.Models;
 namespace MovieStoreExamen.Controllers
 {
     [Authorize(Roles = "Administrator,Worker")]
-    public class GenresController : Controller
+    public class GenresController : ApplicationController
     {
-        private readonly ApplicationDbContext _context;
 
-        public GenresController(ApplicationDbContext context)
+        public GenresController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<ApplicationController> logger)
+            : base(context, httpContextAccessor, logger)
         {
-            _context = context;
         }
 
         // GET: Genres

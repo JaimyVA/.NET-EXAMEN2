@@ -13,13 +13,12 @@ using MovieStoreExamen.Models;
 namespace MovieStoreExamen.Controllers
 {
     [Authorize(Roles = "Administrator,Worker")]
-    public class CustomersController : Controller
+    public class CustomersController : ApplicationController
     {
-        private readonly ApplicationDbContext _context;
 
-        public CustomersController(ApplicationDbContext context)
+        public CustomersController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<ApplicationController> logger) 
+            :base(context, httpContextAccessor, logger)
         {
-            _context = context;
         }
 
         // GET: Customers

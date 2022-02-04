@@ -11,13 +11,12 @@ using MovieStoreExamen.Models;
 
 namespace MovieStoreExamen.Controllers
 {
-    public class RentalsController : Controller
+    public class RentalsController : ApplicationController
     {
-        private readonly ApplicationDbContext _context;
 
-        public RentalsController(ApplicationDbContext context)
+        public RentalsController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<ApplicationController> logger)
+            : base(context, httpContextAccessor, logger)
         {
-            _context = context;
         }
 
         // GET: Rentals

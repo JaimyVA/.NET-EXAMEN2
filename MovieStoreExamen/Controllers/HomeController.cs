@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using MovieStoreExamen.Areas.Identity.Data;
+using MovieStoreExamen.Data;
 using MovieStoreExamen.Models;
 using System.Diagnostics;
 
 namespace MovieStoreExamen.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ApplicationController
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<ApplicationController> logger) :base(context, httpContextAccessor, logger)
         {
-            _logger = logger;
         }
 
         public IActionResult ChangeLanguage(string id, string returnUrl)
@@ -33,6 +33,7 @@ namespace MovieStoreExamen.Controllers
 
         public IActionResult Index()
         {
+            ApplicationUser user = _user;
             return View();
         }
 

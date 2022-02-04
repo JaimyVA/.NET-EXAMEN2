@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using MovieStoreExamen.Areas.Identity.Data;
 using MovieStoreExamen.Models;
 using System.Configuration;
+using MovieStoreExamen.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 string[] supportedCultures = null;
@@ -36,6 +37,7 @@ builder.Services.Configure<RequestLocalizationOptions>(option =>
     .AddSupportedUICultures(supportedCultures);
 });
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 
 // Wijzig de standaard settings van Identity als nodig
 builder.Services.Configure<IdentityOptions>(options =>
@@ -84,6 +86,7 @@ app.MapControllerRoute(
 
 
 app.MapRazorPages();
+app.UseMiddleware<SessionUser>();
 
 using (var scope = app.Services.CreateScope())
 {
