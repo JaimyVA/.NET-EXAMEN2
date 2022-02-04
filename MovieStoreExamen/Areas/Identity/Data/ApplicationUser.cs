@@ -27,4 +27,3 @@ public class ApplicationUserViewModel
     public Boolean Worker { get; set; }
     public Boolean Administrator { get; set; }
 }
-

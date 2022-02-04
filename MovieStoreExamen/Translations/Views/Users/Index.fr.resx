@@ -141,8 +141,14 @@
   <data name="Rollen" xml:space="preserve">
     <value>Rôles</value>
   </data>
+  <data name="Sluit Uit" xml:space="preserve">
+    <value>Exclut</value>
+  </data>
   <data name="Telefoonnummer" xml:space="preserve">
     <value>Numéro de téléphone</value>
+  </data>
+  <data name="Uitsluiten ongedaan maken" xml:space="preserve">
+    <value>Annuler l'exclusion</value>
   </data>
   <data name="Verwijderen" xml:space="preserve">
     <value>Supprimer</value>

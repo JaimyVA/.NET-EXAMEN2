@@ -118,51 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Achternaam" xml:space="preserve">
-    <value>Last name</value>
+    <value>Last Name</value>
   </data>
-  <data name="Buitengesloten" xml:space="preserve">
-    <value>Locked out</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="Gebruikersbeheer" xml:space="preserve">
-    <value>User Management</value>
+  <data name="Administrator" xml:space="preserve">
+    <value>Administrator</value>
   </data>
   <data name="Gebruikersnaam" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="Nieuwe gebruiker" xml:space="preserve">
-    <value>New User</value>
+  <data name="Klant" xml:space="preserve">
+    <value>Customer</value>
   </data>
-  <data name="Rollen" xml:space="preserve">
-    <value>Roles</value>
+  <data name="Medewerker" xml:space="preserve">
+    <value>Worker</value>
   </data>
-  <data name="Sluit Uit" xml:space="preserve">
-    <value>Lock</value>
+  <data name="Opslaan" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="Telefoonnummer" xml:space="preserve">
-    <value>Phone number</value>
+  <data name="Terug naar Overzicht" xml:space="preserve">
+    <value>Back to List</value>
   </data>
-  <data name="Uitsluiten ongedaan maken" xml:space="preserve">
-    <value>Unlock</value>
-  </data>
-  <data name="Verwijderen" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="Volgende" xml:space="preserve">
-    <value>Next</value>
+  <data name="Verander Rollen" xml:space="preserve">
+    <value>Change Roles</value>
   </data>
   <data name="Voornaam" xml:space="preserve">
-    <value>First name</value>
-  </data>
-  <data name="Vorige" xml:space="preserve">
-    <value>Previous</value>
-  </data>
-  <data name="Wijzigen" xml:space="preserve">
-    <value>Edit</value>
+    <value>First Name</value>
   </data>
 </root>

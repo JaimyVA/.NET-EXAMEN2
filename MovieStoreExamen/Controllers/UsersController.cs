@@ -89,7 +89,7 @@ namespace MovieStoreExamen.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Roles([Bind("Id, UserName, FirstName, LastName, User, SystemAdministrator, UserAdministrator")] ApplicationUserViewModel model)
+        public async Task<ActionResult> Roles([Bind("Id, UserName, FirstName, LastName, Administrator, Customer, Worker")] ApplicationUserViewModel model)
         {
             List<IdentityUserRole<string>> roles = _context.UserRoles.Where(ur => ur.UserId == model.Id).ToList();
             foreach (IdentityUserRole<string> role in roles)

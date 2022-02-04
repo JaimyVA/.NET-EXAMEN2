@@ -7,7 +7,7 @@
     string VerticaalStreepje = " | ";
 }
 
-<h1>@L["Index"]</h1>
+<h1>@L["Gebruikersbeheer"]</h1>
 
 
 <table class="table">
@@ -26,7 +26,9 @@
             <th>
                 @L["Email"]
             </th>
-
+             <th>
+                @L["Buitengesloten"]
+            </th>
             <th colspan=3 class="align-content-center">@L["Rollen"]</th>
             <th></th>
         </tr>
@@ -40,9 +42,10 @@
             <th>
                  <input type="text" name="email" value=@ViewData["email"] >
             </th>
-            <th>ADMIN</th>
-            <th>CUSRTOMER</th>
-            <th>WORKER</th>
+            <th></th>
+            <th>A</th>
+            <th>C</th>
+            <th>W</th>
             <th>
                 <input type="submit" value=@L["Filter"] >
             </th>
@@ -65,6 +68,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
+            <td class="align-content-center">
+                @Html.DisplayFor(modelItem => item.Lockout)
+            </td>
              <td>
                 @Html.DisplayFor(modelItem => item.Administrator)
             </td>
@@ -73,6 +79,17 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Worker)
+            </td>
+            <td>
+                @if (!item.Lockout)
+                {
+                    <a asp-action="Locking" asp-route-id="@item.Id">@L["Sluit Uit"]</a> @VerticaalStreepje
+                }
+                else
+                {
+                    <a asp-action="Locking" asp-route-id="@item.Id">@L["Uitsluiten ongedaan maken"]</a> @VerticaalStreepje
+                }
+                <a asp-action="Roles" asp-route-id="@item.Id">@L["Rollen"]</a>
             </td>
         </tr>
 }
