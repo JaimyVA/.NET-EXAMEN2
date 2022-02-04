@@ -602,3 +602,5 @@ C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\M
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.Translations.Areas.Identity.Pages.Account.ForgotPassword.fr.resources
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.Translations.Areas.Identity.Pages.Account.Manage._ManageNav.fr.resources
 C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.Translations.Areas.Identity.Pages.Account.Manage._ManageNav.en.resources
+C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.Translations.Views.Users.Index.en.resources
+C:\Users\jaimy\Documents\GitHub\.NET-EXAMEN2\MovieStoreExamen\obj\Debug\net6.0\MovieStoreExamen.Translations.Views.Users.Index.fr.resources

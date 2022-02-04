@@ -22,9 +22,9 @@ public class ApplicationUserViewModel
     public string Email { get; set; }
     public string? Language { get; set; }
     public string? PhoneNumber { get; set; }
-    public bool Lockout { get; set; }
-    public bool Customer { get; set; }
-    public bool Worker { get; set; }
-    public bool Administrator { get; set; }
+    public Boolean Lockout { get; set; }
+    public Boolean Customer { get; set; }
+    public Boolean Worker { get; set; }
+    public Boolean Administrator { get; set; }
 }
 

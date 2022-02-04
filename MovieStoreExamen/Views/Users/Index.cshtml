@@ -1,0 +1,102 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using MovieStoreExamen.Areas.Identity.Data
+@model PaginatedList<MovieStoreExamen.Areas.Identity.Data.ApplicationUserViewModel>
+@inject IViewLocalizer L
+@{
+    ViewData["Title"] = L["Gebruikersbeheer"];
+    string VerticaalStreepje = " | ";
+}
+
+<h1>@L["Index"]</h1>
+
+
+<table class="table">
+<form asp-controller="Users" asp-action="Index" method="get">
+    <thead>
+        <tr>
+            <th>
+                @L["Gebruikersnaam"]
+            </th>
+            <th>
+                @L["Voornaam"]
+            </th>
+            <th>
+                @L["Achternaam"]
+            </th>
+            <th>
+                @L["Email"]
+            </th>
+
+            <th colspan=3 class="align-content-center">@L["Rollen"]</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>
+                <input type="text" name="userName" value=@ViewData["userName"] >
+            </th>
+            <th colspan=2 class="align-content-center">
+                <input type="text" name="name" value=@ViewData["name"] >
+            </th>
+            <th>
+                 <input type="text" name="email" value=@ViewData["email"] >
+            </th>
+            <th>ADMIN</th>
+            <th>CUSRTOMER</th>
+            <th>WORKER</th>
+            <th>
+                <input type="submit" value=@L["Filter"] >
+            </th>
+        </tr>
+    </thead>
+     </form>
+    <tbody>
+
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Administrator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Worker)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-userName=@ViewData["userName"] 
+   asp-route-email=@ViewData["email"]
+   asp-route-name=@ViewData["name"]
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   class="btn btn-default @prevDisabled">
+   @L["Vorige"]
+</a>
+<a asp-action="Index"
+   asp-route-userName=@ViewData["userName"] 
+   asp-route-name=@ViewData["name"]
+   asp-route-email=@ViewData["email"]
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   class="btn btn-default @nextDisabled">
+   @L["Volgende"]
+</a>
