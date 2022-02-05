@@ -47,3 +47,8 @@
   - Lening toevoegen
   - Details bekijken (Welke klant, welke film, Leen datum, datum voor terug te brengen)
   - Leningen verwijderen
+
+  # Login gegevens (Username - Password):
+  - Admin - Student+1
+  - Customer1 - MovieStore123
+  - Worker1 - MovieStore123
